@@ -1,0 +1,35 @@
+https://qastudio.notion.site/SQL-1459cf7d33c64a0a872e80459d3c9aec
+
+answers:
+
+SELECT name, surname FROM staff WHERE age>24 and city='Moscow';
+
+SELECT name, surname FROM staff ORDER BY age ASC;
+
+SELECT positions.position_name, staff.age FROM staff JOIN positions ON staff.position_id=positions.id WHERE position_name='qa_engineer';
+
+SELECT staff.name, staff.surname FROM staff JOIN positions ON staff.position_id=positions.id WHERE position_name='frontend_dev' LIMIT 20;
+
+SELECT computers.computer_name FROM computers JOIN positions ON computers.id=positions.computer_id JOIN staff ON staff.position_id=positions.id WHERE staff.name='anastasia' and staff.surname='morozova';
+
+Select COUNT(*) from staff WHERE city='Moscow';
+
+Select staff.name, salary FROM staff
+JOIN positions ON staff.position_id=positions.id;
+
+SELECT SUM(salary) FROM Positions
+JOIN staff ON staff.position_id=positions.id
+WHERE city = 'Moscow'
+
+SELECT city, SUM(Salary) FROM staff
+JOIN positions ON staff.position_id=positions.id
+GROUP BY city;
+
+SELECT distinct city FROM staff;
+
+SELECT distinct city FROM staff WHERE city LIKE '%k%';
+
+SELECT position_name, salary FROM positions WHERE salary BETWEEN 1500 and 2200;
+
+SELECT name, surname, position_name FROM staff
+RIGHT JOIN positions ON staff.position_id=positions.id;
