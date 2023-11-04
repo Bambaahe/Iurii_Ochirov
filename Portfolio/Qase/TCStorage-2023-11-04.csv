@@ -1,0 +1,139 @@
+id,title,description,preconditions,postconditions,tags,priority,severity,type,behavior,automation,status,is_flaky,layer,steps_type,steps_actions,steps_result,steps_data,milestone_id,milestone,suite_id,suite_parent_id,suite,suite_without_cases,parameters
+,,,,,,,,,,,,,,,,,,,,1,,"Онлайн магазин одежды",1
+,,,,,,,,,,,,,,,,,,,,2,1,"Главная страница",1
+,,,,,,,,,,,,,,,,,,,,2,1,"Главная страница",1
+,,,,,,,,,,,,,,,,,,,,3,2,Шапка,1
+,,,,,,,,,,,,,,,,,,,,3,2,Шапка,1
+,,,,,,,,,,,,,,,,,,,,4,2,Контент,1
+,,,,,,,,,,,,,,,,,,,,4,2,Контент,1
+,,,,,,,,,,,,,,,,,,,,5,2,Футер,1
+,,,,,,,,,,,,,,,,,,,,5,2,Футер,1
+,,,,,,,,,,,,,,,,,,,,6,1,Корзина,1
+,,,,,,,,,,,,,,,,,,,,6,1,Корзина,1
+,,,,,,,,,,,,,,,,,,,,7,6,"Оплата товара",1
+,,,,,,,,,,,,,,,,,,,,7,6,"Оплата товара",1
+8,"Кнопка с логотипом",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,,,,,,3,2,Шапка,,
+1,"Поиск товара","Мы можем найти товар по поисковому запросу","Авторизоваться на сайте [https://clinquant-gumption-302a84.netlify.app](https://clinquant-gumption-302a84.netlify.app/)/",,,undefined,undefined,functional,positive,is-not-automated,actual,no,e2e,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Нажать на поле Search и ввести - ""Nike""
+","1. 
+2. На странице показываются карточки товаров ""Nike""
+","1. 
+2. 
+",,,3,2,Шапка,,
+7,"Кнопка ""Cart""",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,,,,,,3,2,Шапка,,
+6,"Кнопка ""My account""",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,,,,,,3,2,Шапка,,
+3,"Добавление товара в корзину","Мы можем добавить товар в корзину","Авторизоваться на сайте [https://clinquant-gumption-302a84.netlify.app](https://clinquant-gumption-302a84.netlify.app/)/",,,undefined,undefined,functional,undefined,is-not-automated,actual,no,e2e,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. На главной странице добавить любой товар в ""Корзину""
+","1. 
+2. Товар добавился в корзину
+","1. 
+2. 
+",,,4,2,Контент,,
+5,"Чек-бокс ""Кроссовки""",,,,,undefined,normal,other,positive,is-not-automated,actual,no,e2e,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Выбрать чек-бокс ""Кроссовки""
+","1. 
+2. На странице показываются только кроссовки
+","1. 
+2. 
+",,,4,2,Контент,,
+10,"Кнопка смены отображения товаров",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Кликнуть по кнопке с изображением списка
+","1. 
+2. Товары показываются списком
+","1. 
+2. 
+",,,4,2,Контент,,
+11,"Кнопка перехода на 2 страницу",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Кликнуть по цифре 2 под товарами
+","1. 
+2. Происходит переход на 2 страницу с товарами
+","1. 
+2. 
+",,,4,2,Контент,,
+12,"Проверка левого поля ввода диапазона цены с валидными данными",,"Валидные числа от 1999 до 22499",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. В левое поле ввода диапазона цены ввести число 5000
+","1. 
+2. На странице останутся товары со стоимостью в диапазоне от 5000 до 22499
+","1. 
+2. 
+",,,4,2,Контент,,
+13,"Проверка правого поля ввода диапазона цены с валидными данными",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. В правое поле ввода диапазона цены ввести число 5000
+","1. 
+2. На странице останутся товары со стоимостью в диапазоне от 1999 до 5000
+","1. 
+2. 
+",,,4,2,Контент,,
+14,"Проверка полосы прокрутки цены",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Навестить на полосу прокрутки передвинуть диапазон
+","1. 
+2. Полоса прокрутки двигается и в полях ввода диапазона меняются значения
+","1. 
+2. 
+",,,4,2,Контент,,
+15,"Проверка кнопки ""Очистить""",,"В корзине должен быть хотя бы 1 товар",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Кликнуть по корзине
+3. Кликнуть по кнопке ""Очистить""
+","1. 
+2. Открывается страницы корзины
+3. Все товары из корзины удаляются
+","1. 
+2. 
+3. 
+",,,6,1,Корзина,,
+16,"Проверка кнопки ""+""",,"В корзине должен быть хотя бы 1 товар",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Кликнуть по корзине
+3. Кликнуть по ""+"" напротив выбранного товара
+","1. 
+2. Открывается корзина
+3. Количество выбранного товара увелчится на 1
+","1. 
+2. 
+3. 
+",,,6,1,Корзина,,
+19,"Проверка кнопки ""-""",,"В корзине должен быть хотя бы 1 товар",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Кликнуть по корзине
+3. Кликнуть по ""-"" напротив выбранного товара
+","1. 
+2. Открывается корзина
+3. Количество выбранного товара уменьшится на 1
+","1. 
+2. 
+3. 
+",,,6,1,Корзина,,
+18,"Проверка кнопки ""К оплате""",,"В корзине должен быть хотя бы 1 товар",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Открыть корзину
+3. Кликнуть по кнопке ""К оплате""
+","1. 
+2. 
+3. Открывается для заполнения форма ""Доставка""
+","1. 
+2. 
+3. 
+",,,7,6,"Оплата товара",,
+20,"Кнопка ""Далее""",,"В корзине должен быть хотя бы 1 товар",,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. Перейти на https://clinquant-gumption-302a84.netlify.app/catalog
+2. Открыть корзину
+3. Кликнуть к оплате
+4. Заполнить обязательные поля и кликнуть ""Далее""
+","1. 
+2. 
+3. 
+4. Открывается для заполнения форма ""Оплата""
+","1. 
+2. 
+3. 
+4. 
+",,,7,6,"Оплата товара",,
+21,"Кнопка ""Купить""",,,,,undefined,normal,other,undefined,is-not-automated,actual,no,unknown,classic,"1. [Выполнить этот тест-кейс](https://app.qase.io/case/Portfolio-20)
+2. В поле ввода номера карты ввести валидный номер карты
+3. В поле CVV ввести валидный номер CVV
+4. Кликнуть по кнопке ""Купить""
+","1. 
+2. 
+3. 
+4. Оплата прошла успешно
+","1. 
+2. 
+3. 
+4. 
+",,,7,6,"Оплата товара",,
