@@ -1,0 +1,54 @@
+1. Выведи имя и фамилию всех сотрудников с возрастом > 24 лет в Москве    
+	SELECT name, surname FROM staff WHERE age>24 and city='Moscow';
+    
+2. Выведи имя и фамилию всех сотрудников, отсортированных от младших к старшим
+	SELECT name, surname FROM staff ORDER BY age ASC;
+
+     
+3. Выведи возраст всех сотрудников с профессией *`qa_engineer`*
+	SELECT positions.position_name, staff.age FROM staff JOIN positions ON staff.position_id=positions.id WHERE 	position_name='qa_engineer';
+    
+4. Выведи имя и фамилию всех `frontend_dev` с лимитом строк в 20
+	SELECT staff.name, staff.surname FROM staff JOIN positions ON staff.position_id=positions.id WHERE 	position_name='frontend_dev' LIMIT 20;
+
+  
+5. Выведи какой компьютер у Анастасии Морозовой (нужно использовать двойной `Join`)
+	SELECT computers.computer_name FROM computers JOIN positions ON computers.id=positions.computer_id JOIN staff ON    	staff.position_id=positions.id WHERE staff.name='anastasia' and staff.surname='morozova';
+ 
+6. Сколько в компании всего сотрудников работает в Москве?
+	SELECT COUNT(*) from staff WHERE city='Moscow';
+
+      
+7. Какая зарплата у каждого сотрудника. В результирующей таблице нужно вывести два столбика — имя и зарплата
+	Select staff.name, salary FROM staff
+	JOIN positions ON staff.position_id=positions.id;
+    
+8. Какая общая зарплата всех сотрудников, которые работают в Москве?
+	SELECT SUM(salary) FROM Positions
+	JOIN staff ON staff.position_id=positions.id
+	WHERE city = 'Moscow'
+     
+9. Выведи суммы зарплат, разбитые по городам.
+В результирующей таблице хочу увидеть четыре города и сумму всех зарплат сотрудников в этом городе.
+Нужно погуглить про оператор *`group by`*
+	SELECT city, SUM(Salary) FROM staff
+	JOIN positions ON staff.position_id=positions.id
+	GROUP BY city;
+    
+10. Выведи список уникальных городов, где есть сотрудники.
+В результирующей таблице хочу увидеть четыре города.
+Нужно погуглить про параметр *`distinct`*
+	SELECT distinct city FROM staff;
+    
+11. Выведи список уникальных городов, где в названии есть буква *k*. В результирующей таблице хочу увидеть два города.
+Нужно погуглить про оператор *`like`*
+	SELECT distinct city FROM staff WHERE city LIKE '%k%';
+    
+12. Выведи названия должностей, у которых зарплата между 1500 и 2200, используя оператор `between`
+	SELECT position_name, salary FROM positions WHERE salary BETWEEN 1500 and 2200;
+    
+13. Выведи Имя и Фамилию каждого сотрудника вместе с их Должностью. 
+Важно: есть две должности, на которых никто не работает. Нужно их тоже получить. 
+	SELECT name, surname, position_name FROM staff
+	RIGHT JOIN positions ON staff.position_id=positions.id;
+   

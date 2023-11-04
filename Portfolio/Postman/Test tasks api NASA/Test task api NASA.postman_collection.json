@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "fb9733f8-8395-4b17-a7f7-8c42f742ff9c",
+		"name": "Test task api NASA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26386937",
+		"_collection_link": "https://bold-shadow-724617.postman.co/workspace/Bambaahe-team~4918f8d9-9dd3-4e5a-a4cc-aa5952cef4d3/collection/26386937-fb9733f8-8395-4b17-a7f7-8c42f742ff9c?action=share&source=collection_link&creator=26386937"
+	},
+	"item": [
+		{
+			"name": "api Nasa",
+			"item": [
+				{
+					"name": "APOD information by date",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "api_key",
+								"value": "DEMO_KEY",
+								"in": "query"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.nasa.gov/planetary/apod?date=1990-04-04",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nasa",
+								"gov"
+							],
+							"path": [
+								"planetary",
+								"apod"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "1990-04-04",
+									"description": "The date of the APOD image to retrieve\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APOD is a picture/video",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"APOD is a picture\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.media_type).to.eql(\"image\");\r",
+									"});\r",
+									"pm.test(\"APOD is a video\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.media_type).to.eql(\"video\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nasa",
+								"gov"
+							],
+							"path": [
+								"planetary",
+								"apod"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "DEMO_KEY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Media data on the cosmic body - earth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://images-api.nasa.gov/search?q=earth",
+							"protocol": "https",
+							"host": [
+								"images-api",
+								"nasa",
+								"gov"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "earth"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reqres",
+			"item": [
+				{
+					"name": "reqres Rachel Howell",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Rachel Howell on page 2\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"rachel.howell@reqres.in\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iurii\",\r\n    \"job\": \"yourbesttester\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://reqres.in/api/users"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
